@@ -22,7 +22,8 @@ struct ListView: View {
                 ListRowView(title: item)
             }
         }
-            .navigationTitle("DO TO DO🦄🖌")
+        .listStyle(PlainListStyle())
+        .navigationTitle("DO TO DO🦄🖌")
             .navigationBarItems(
                 leading: EditButton(),
                 trailing:
