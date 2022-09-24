@@ -19,8 +19,7 @@ struct ListView: View {
         List {
             
             ForEach(items) { item in
-                Text("Hi")
-               // ListRowView(title: item)
+                ListRowView(item: item)
             }
         }
         .listStyle(PlainListStyle())
