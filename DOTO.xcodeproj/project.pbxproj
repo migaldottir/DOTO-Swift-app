@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		EDF0C22128DF5231009622B0 /* DOTOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0C22028DF5231009622B0 /* DOTOApp.swift */; };
-		EDF0C22328DF5231009622B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0C22228DF5231009622B0 /* ContentView.swift */; };
 		EDF0C22528DF5231009622B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF0C22428DF5231009622B0 /* Assets.xcassets */; };
 		EDF0C22828DF5231009622B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF0C22728DF5231009622B0 /* Preview Assets.xcassets */; };
+		EDF0C23028DF578D009622B0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0C22F28DF578D009622B0 /* ListView.swift */; };
+		EDF0C23228DF5AE6009622B0 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0C23128DF5AE6009622B0 /* ListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EDF0C21D28DF5231009622B0 /* DOTO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF0C22028DF5231009622B0 /* DOTOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTOApp.swift; sourceTree = "<group>"; };
-		EDF0C22228DF5231009622B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EDF0C22428DF5231009622B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDF0C22728DF5231009622B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDF0C22F28DF578D009622B0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		EDF0C23128DF5AE6009622B0 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF0C22028DF5231009622B0 /* DOTOApp.swift */,
-				EDF0C22228DF5231009622B0 /* ContentView.swift */,
+				EDF0C22E28DF574D009622B0 /* Views */,
 				EDF0C22428DF5231009622B0 /* Assets.xcassets */,
 				EDF0C22628DF5231009622B0 /* Preview Content */,
 			);
@@ -65,6 +67,15 @@
 				EDF0C22728DF5231009622B0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EDF0C22E28DF574D009622B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDF0C22F28DF578D009622B0 /* ListView.swift */,
+				EDF0C23128DF5AE6009622B0 /* ListRowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF0C22328DF5231009622B0 /* ContentView.swift in Sources */,
 				EDF0C22128DF5231009622B0 /* DOTOApp.swift in Sources */,
+				EDF0C23028DF578D009622B0 /* ListView.swift in Sources */,
+				EDF0C23228DF5AE6009622B0 /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
