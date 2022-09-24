@@ -21,7 +21,12 @@ struct ListView: View {
             ForEach(items, id: \.self) { item in
                 ListRowView(title: item)
             }
+        }
             .navigationTitle("DO TO DO🦄🖌")
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing:
+                    NavigationLink("Add", destination: Text("Destination")))
         }
     }
     
@@ -32,5 +37,4 @@ struct ListView: View {
             }
         }
     }
-} 
 
