@@ -30,13 +30,21 @@ class ListViewModel: ObservableObject {
     
     //UserDefaults should be used only when working with small pieces of data
     
-    func getItems() {
-        let newItems = [
-            ItemModel(title:"This is the first title!", isCompleted: false),
-            ItemModel(title: "This is the second!", isCompleted:true),
-            ItemModel(title: "Third!", isCompleted: false),
-        ]
-        items.append(contentsOf: newItems)}
+        func getItems() {
+    //        let newItems = [
+    //            ItemModel(title:"This is the first title!", isCompleted: false),
+    //            ItemModel(title: "This is the second!", isCompleted:true),
+    //            ItemModel(title: "Third!", isCompleted: false),
+    //        ]
+    //        items.append(contentsOf: newItems)
+    
+    guard
+        let data = UserDefaults.standard.data(forKey: itemsKey),
+        let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
+    else { return }
+    
+            self.items = savedItems
+    }
     
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
