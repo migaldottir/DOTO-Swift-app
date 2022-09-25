@@ -10,21 +10,17 @@ import SwiftUI
 struct ListView: View {
     //background data here
     
-    @State var items: [ItemModel] = [
-        ItemModel(title:"This is the first title!", isCompleted: false),
-        ItemModel(title: "This is the second!", isCompleted:true),
-        ItemModel(title: "Third!", isCompleted: false),
-    ]
-    
+    @EnvironmentObject var listViewModel: ListViewModel
+       
     var body: some View {
 //all the code within body is for the View - strictly UI
         List {
             
-            ForEach(items) { item in
+            ForEach(listViewModel.items) { item in
                 ListRowView(item: item)
             }
-            .onDelete(perform: deleteItem)
-            .onMove(perform: moveItem)
+            .onDelete(perform: listViewModel.deleteItem)
+            .onMove(perform: listViewModel.moveItem)
             
         }
         .listStyle(PlainListStyle())
@@ -35,14 +31,7 @@ struct ListView: View {
                 NavigationLink("Add", destination: AddView())
         )
     }
-//background data down here
-    func deleteItem(indexSet: IndexSet) {
-        items.remove(atOffsets: indexSet)
-    }
-    
-    func moveItem(from: IndexSet, to: Int) {
-        items.move(fromOffsets: from, toOffset: to)
-    }
+
 }
     
     struct ListView_Previews: PreviewProvider {
@@ -50,6 +39,7 @@ struct ListView: View {
             NavigationView {
                 ListView()
             }
+            .environmentObject(ListViewModel())
         }
     }
 

@@ -18,7 +18,7 @@ View - UI
 @main
 struct DOTOApp: App {
     
-    @SateObject var listViewModel: ListViewModel = ListViewModel()
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
     
     
     var body: some Scene {
@@ -26,6 +26,7 @@ struct DOTOApp: App {
             NavigationView {
                 ListView()
             }
+            .environmentObject(listViewModel)
         }
     }
 }
