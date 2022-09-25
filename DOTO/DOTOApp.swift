@@ -17,6 +17,10 @@ View - UI
  */
 @main
 struct DOTOApp: App {
+    
+    @SateObject var listViewModel: ListViewModel = ListViewModel()
+    
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
