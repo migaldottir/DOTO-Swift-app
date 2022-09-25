@@ -24,6 +24,7 @@ struct ItemModel: Identifiable {
         return ItemModel(id: id, title: title, isCompleted: !isCompleted)
     }
     
+    //now you update items only within ItemModel
 }
 
 //ItemModel(id: String, title: String, isCompleted: Bool)
