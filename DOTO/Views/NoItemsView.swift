@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NoItemsView: View {
+    
+    @State var animate: Bool = false
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
@@ -29,9 +31,21 @@ struct NoItemsView: View {
             }
             .multilineTextAlignment(.center)
             .padding(40)
+            .onAppear(perform: addAnimation)
+                
+            
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+    
+    func addAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            withAnimation(.easeInOut) {
+                animate.toggle()
+            }
+        }
+        
+    }
     }
     
     struct NoItemsView_Previews: PreviewProvider {
