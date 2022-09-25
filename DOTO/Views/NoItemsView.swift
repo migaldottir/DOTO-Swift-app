@@ -36,7 +36,7 @@ struct NoItemsView: View {
                     color: animate ? secondaryAccentColor.opacity(0.7) : Color.accentColor.opacity(0.7),
                     radius: animate ? 25 : 10,
                     x: 0.0,
-                    y: animate ? 50 : 30)
+                    y: animate ? 47 : 30)
                 .scaleEffect(animate ? 1.1 : 1.0)
                 .offset(y: animate ? -7 : 0)
             }
@@ -54,7 +54,7 @@ struct NoItemsView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             withAnimation(
                 Animation
-                    .easeInOut(duration: 2.0)
+                    .easeInOut(duration: 1.1)
                     .repeatForever()
                 ){
                 animate.toggle()
