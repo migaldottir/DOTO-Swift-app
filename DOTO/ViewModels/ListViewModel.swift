@@ -18,11 +18,17 @@ import Foundation
  */
 
 class ListViewModel: ObservableObject {
-    @Published var items: [ItemModel] = []
-    
+    @Published var items: [ItemModel] = [] {
+        didSet {
+            saveItems()
+        }
+    }
+    let itemsKey: String = "items_list"
     init() {
         getItems()
     }
+    
+    //UserDefaults should be used only when working with small pieces of data
     
     func getItems() {
         let newItems = [
@@ -50,6 +56,12 @@ class ListViewModel: ObservableObject {
         if let index = items.firstIndex(where: { $0.id == item.id })
         {  items[index] = item.updateCompletion()
     }
+    }
+    
+    func saveItems() {
+        if let encodedData = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(encodedData, forKey: itemsKey)
+        }
     }
 }
 
