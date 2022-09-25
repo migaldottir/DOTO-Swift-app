@@ -8,28 +8,33 @@
 import SwiftUI
 
 struct ListView: View {
-    //background data here
     
     @EnvironmentObject var listViewModel: ListViewModel
        
     var body: some View {
 //all the code within body is for the View - strictly UI
-        List {
-            
-            ForEach(listViewModel.items) { item in
-                ListRowView(item: item)
-                    .onTapGesture {
-                        withAnimation(.linear) {
-                            listViewModel.updateItem(item: item)
-                            
-                        }
-                    }
+        
+        ZStack {
+            if listViewModel.items.isEmpty {
+                Text("No items")
+            } else {
+                List {
+                ForEach(listViewModel.items) { item in
+                    ListRowView(item: item)
+                        .onTapGesture {
+                            withAnimation(.linear) {
+                                listViewModel.updateItem(item: item)
+                                            
+                                        }
+                                    }
             }
-            .onDelete(perform: listViewModel.deleteItem)
-            .onMove(perform: listViewModel.moveItem)
-            
+                .onDelete(perform: listViewModel.deleteItem)
+                .onMove(perform: listViewModel.moveItem)
+                            
+                }
+            .listStyle(PlainListStyle())            }
         }
-        .listStyle(PlainListStyle())
+        
         .navigationTitle("DO TO DO🦄🖌")
         .navigationBarItems(
             leading: EditButton(),
