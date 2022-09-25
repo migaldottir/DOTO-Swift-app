@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ListViewModel {
+class ListViewModel: ObservableObject {
     @Published var items: [ItemModel] = []
     
     init() {
@@ -21,4 +21,14 @@ class ListViewModel {
             ItemModel(title: "Third!", isCompleted: false),
         ]
         items.append(contentsOf: newItems)}
+    
+    func deleteItem(indexSet: IndexSet) {
+        items.remove(atOffsets: indexSet)
+    }
+    
+    func moveItem(from: IndexSet, to: Int) {
+        items.move(fromOffsets: from, toOffset: to)
+    }
 }
+
+
