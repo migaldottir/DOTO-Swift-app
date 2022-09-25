@@ -7,6 +7,16 @@
 
 import Foundation
 
+/*
+ CRUD FUNCTIONS in DOTO app
+ 
+ Create - add items
+ Read - get items
+ Update - toggle items completion
+ Delete - delete items
+ 
+ */
+
 class ListViewModel: ObservableObject {
     @Published var items: [ItemModel] = []
     
@@ -37,15 +47,9 @@ class ListViewModel: ObservableObject {
     
     func updateItem(item: ItemModel) {
         
-//        if let index = items.firstIndex { (existingItem) -> Bool in
-//            return existingItem.id == item.id
-//
-//        } {
-//            //run this code
-//        }
-        
         if let index = items.firstIndex(where: { $0.id == item.id })
-            items[index] = ItemModel(title: item.title, isCompleted: !item.isCompleted)
+        {  items[index] = item.updateCompletion()
+    }
     }
 }
 
