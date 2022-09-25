@@ -12,7 +12,8 @@ let backgroundGradient = LinearGradient(
 
 
 struct AddView: View {
-    
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var listViewModel: ListViewModel
     @State var textFieldText: String = ""
     var body: some View {
         ScrollView {
@@ -23,9 +24,7 @@ struct AddView: View {
                     .background(.white)
                     .cornerRadius(10)
                 
-                Button(action: {
-                    
-                }, label: {
+                Button(action: saveButtonPressed, label: {
                     Text("Save".uppercased())
                         .foregroundColor(.white)
                         .font(.headline)
@@ -36,18 +35,28 @@ struct AddView: View {
                 } )
                 .padding(14)
             }
-                 .navigationTitle("Add an Item 🖍")
+            .navigationTitle("Add an Item 🖍")
             
         }
+        
         .background(backgroundGradient)
+    }
+       
+        func saveButtonPressed() {
+            listViewModel.addItem(title: textFieldText)
+            presentationMode.wrappedValue.dismiss()
+        
+        }
         
     }
+    
         
     struct AddView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
                 AddView()
             }
+            .environmentObject(ListViewModel())
         }
     }
-}
+
