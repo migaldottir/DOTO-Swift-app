@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListView: View {
+    //background data here
     
     @State var items: [ItemModel] = [
         ItemModel(title:"This is the first title!", isCompleted: false),
@@ -16,6 +17,7 @@ struct ListView: View {
     ]
     
     var body: some View {
+//all the code within body is for the View - strictly UI
         List {
             
             ForEach(items) { item in
@@ -33,6 +35,7 @@ struct ListView: View {
                 NavigationLink("Add", destination: AddView())
         )
     }
+//background data down here
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
     }
