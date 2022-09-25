@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED606A1128E07A4C00FB7BE9 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED606A1028E07A4C00FB7BE9 /* ListViewModel.swift */; };
 		EDF0C22128DF5231009622B0 /* DOTOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0C22028DF5231009622B0 /* DOTOApp.swift */; };
 		EDF0C22528DF5231009622B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF0C22428DF5231009622B0 /* Assets.xcassets */; };
 		EDF0C22828DF5231009622B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF0C22728DF5231009622B0 /* Preview Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED606A1028E07A4C00FB7BE9 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		EDF0C21D28DF5231009622B0 /* DOTO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF0C22028DF5231009622B0 /* DOTOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTOApp.swift; sourceTree = "<group>"; };
 		EDF0C22428DF5231009622B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED606A0F28E07A1800FB7BE9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ED606A1028E07A4C00FB7BE9 /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		EDF0C21428DF5231009622B0 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 			children = (
 				EDF0C22028DF5231009622B0 /* DOTOApp.swift */,
 				EDF0C23528DF8FD0009622B0 /* Models */,
+				ED606A0F28E07A1800FB7BE9 /* ViewModels */,
 				EDF0C22E28DF574D009622B0 /* Views */,
 				EDF0C22428DF5231009622B0 /* Assets.xcassets */,
 				EDF0C22628DF5231009622B0 /* Preview Content */,
@@ -164,6 +175,7 @@
 			files = (
 				EDF0C23728DF900D009622B0 /* ItemModel.swift in Sources */,
 				EDF0C23428DF726F009622B0 /* AddView.swift in Sources */,
+				ED606A1128E07A4C00FB7BE9 /* ListViewModel.swift in Sources */,
 				EDF0C22128DF5231009622B0 /* DOTOApp.swift in Sources */,
 				EDF0C23028DF578D009622B0 /* ListView.swift in Sources */,
 				EDF0C23228DF5AE6009622B0 /* ListRowView.swift in Sources */,
