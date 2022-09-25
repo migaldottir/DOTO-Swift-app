@@ -2,7 +2,7 @@
 //  DOTOApp.swift
 //  DOTO
 //
-//  Created by Refr Asta on 24/09/2022.
+//  Created by Migaldottir on 24/09/2022.
 //
 
 import SwiftUI
